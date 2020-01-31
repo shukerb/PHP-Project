@@ -1,0 +1,12 @@
+body{
+    background-color:#4db6ac;    
+}
+.container{
+    background-color: #fafafa;
+}
+.row{
+    text-align:center;
+}
+.btn{
+    width: 100%;
+}
