@@ -38,30 +38,30 @@ $email = $_POST ['Email'];
                                 $controller->AddUser($user);
                                 $_SESSION['user']= $user;
                                 $_SESSION['message']=('Welcome you created an account and loged in');
-                                header('location: ../Home.php');
+                                header('location: ../Page1.php');
 
                             }
                             else{$_SESSION['message']='Email already exist in the DataBase';
-                                header('location: ../SignIn.php');}
+                                header('location: ../SignUp.php');}
                         }
                         else
                         {$_SESSION['message']='Passwords does not match.';
-                        header('location: ../SignIn.php');
+                        header('location: ../SignUp.php');
                         }
                     }
                     else {
                         $_SESSION['message']= "Make sure to use valid email";
-                        header('location: ../SignIn.php');
+                        header('location: ../SignUp.php');
                     }
                 }
                 else{$_SESSION['message']= "First name or Last name is wrong <br> Please make sure to use only letters";
-                header('location: ../SignIn.php');}
+                header('location: ../SignUp.php');}
             }
             else {$_SESSION['message']= "Please fill in all the data";
-            header('location: ../SignIn.php');}
+            header('location: ../SignUp.php');}
         }
         else {
             $_SESSION['message']= "Error submiting the data!";
-            header('location: ../SignIn.php');
+            header('location: ../SignUp.php');
         }
 ?>

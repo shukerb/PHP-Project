@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (empty($_SESSION['message'])) {
+    $_SESSION['message']=' ';
+}
 ?>
 <html lang="en">
 <head>
@@ -36,7 +39,7 @@ session_start();
                     
                     <div class="row"><button class="btn waves-effect waves-light" type = "submit"> Login</button></div>
                     <div class="row">Don't have an account?</div>
-                    <div class="row"><a href="SignIn.php" class="btn waves-effect waves-light">Signin</a></div>
+                    <div class="row"><a href="SignUp.php" class="btn waves-effect waves-light">Signup</a></div>
                     <div class="row"><span calss="helper-text" style= "color:red;"><?= $_SESSION['message']?></span></div>
                         
                     
