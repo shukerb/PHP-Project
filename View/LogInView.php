@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     $token= $user->getToken();
                     setcookie("loginToken", $token, time() + (86400 * 30), "/");
                 }
-				$_SESSION['user']= $user;
+				$_SESSION['user']= serialize($user);
                 $_SESSION['message']=('Welcome you are loged in');
                 
 					header('location: ../Home.php');

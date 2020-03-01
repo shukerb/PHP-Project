@@ -16,6 +16,8 @@ if (!isset($_SESSION['user'])) {
     <title>PHP Assignment</title>
 </head>
 <body>
+    
+
     <div class="container">
         <h1>welcome</h1>
         
@@ -23,21 +25,15 @@ if (!isset($_SESSION['user'])) {
     <div class="container z-depth-5 valign-wrapper ">
         
         <div class="row" >
-        <span calss="helper-text" style= "color:red;"><?= $_SESSION['message']?>
-            <form action="View/passwordRequestView.php" method="GET" class="col " id="signInForm" >
-                <div class="input-field col ">
-                
-                    <div class="row">
-                        <label for="email">Email</label>
-                        <input type="email"  name="Email" id="email" >
-                    </div>
-                    <div class="row"><button class="btn waves-effect waves-light" type = "submit"> Recover Password </button></div>
-                        
-                </div>
-            </form>
+        <h3><?= $_SESSION['message']?></h3>
+        
+        <div class="row"><a href="#" class="btn waves-effect waves-light">Edite your Information</a></div>
+        <div class="row"><button class="btn waves-effect waves-light" onclick="DeleteConfermation()"> Delete your account</button></div>
+        <div class="row"><a href="View/LogOutView.php" class="btn waves-effect waves-light">Logout</a></div>
         
         </div>
     </div>
+
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

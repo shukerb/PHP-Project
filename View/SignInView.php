@@ -37,7 +37,7 @@ $email = $_POST ['Email'];
                                 $token=generateToken();
                                 $user=new User($firstName,$lastName,$email,$password,$token);
                                 $controller->AddUser($user);
-                                $_SESSION['user']= $user;
+                                $_SESSION['user']= serialize($user);
                                 $_SESSION['message']=('Welcome you created an account and loged in');
                                 header('location: ../Home.php');
 

@@ -157,3 +157,15 @@ function setValid(field){
 function isEmpty(value) {
     if (value==='') return true ;         
 }
+
+//delete account confirmation
+function DeleteConfermation(){
+    var deleteAccount= window.confirm("Are you sure you want to delete your account?");
+
+    if (deleteAccount==true) {
+        location.href = "View/DeleteAccountView.php";
+        alert("Your account has been deleted")
+    }
+}
+
+
