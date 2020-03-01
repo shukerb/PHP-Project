@@ -5,15 +5,13 @@ class User{
     private $lastName;
     private $email;
     private $password;
-    private $token;
     private $id;
 
-    function __construct($firstname,$lastname,$email,$password,$token){
+    function __construct($firstname,$lastname,$email,$password){
         $this->firstName=$firstname;
         $this->lastName=$lastname;
         $this->email=$email;
         $this->password=$password;
-        $this->token=$token;
     }
     //setters
     public function setID($id){
@@ -44,9 +42,6 @@ class User{
         return $this->password;
     }
 
-    public function getToken(){
-        return $this->token;
-    }
 
     public function getID(){
         return $this->id;

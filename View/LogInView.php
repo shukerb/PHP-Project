@@ -23,26 +23,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			{
                 //check if remember me box is active and set a cookie 
                 if (!empty($_POST['Remember'])) {
-                    $token= $user->getToken();
-                    setcookie("loginToken", $token, time() + (86400 * 30), "/");
+                    //$token= $user->getToken();
+                    //setcookie("loginToken", $token, time() + (86400 * 30), "/");
                 }
 				$_SESSION['user']= serialize($user);
                 $_SESSION['message']=('Welcome you are loged in');
                 
-					header('location: ../Home.php');
+					header('location: ../assets/Home.php');
 				
 			}
 			else{$_SESSION['message']='Wrong password please try again';
-				header('location: ../Index.php');}
+				header('location: ../index.php');}
 		}
 		else{$_SESSION['message']='Email does not exist in the DataBase<br> please sign up.';
-					header('location: ../Index.php');}
+					header('location: ../index.php');}
 		
 	}
 	else
 	{
 		$_SESSION['message']='Please Enter your Email and password';
-		header('location: ../Index.php');
+		header('location: ../index.php');
 	}
 }
 ?>

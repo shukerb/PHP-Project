@@ -10,7 +10,7 @@ if (empty($_SESSION['message'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <title>PHP Assignment</title>
 </head>
 <body>
@@ -38,9 +38,9 @@ if (empty($_SESSION['message'])) {
                     </div>
                     
                     <div class="row"><button class="btn waves-effect waves-light" type = "submit"> Login</button></div>
-                    <div class="row"><a href="passwordRequest.php">Forgot my password</a></div>
+                    <div class="row"><a href="assets/passwordRequest.php">Forgot my password</a></div>
                     <div class="row">Don't have an account?</div>
-                    <div class="row"><a href="SignUp.php" class="btn waves-effect waves-light">Signup</a></div>
+                    <div class="row"><a href="assets/SignUp.php" class="btn waves-effect waves-light">Signup</a></div>
                     <div class="row"><span calss="helper-text" style= "color:red;"><?= $_SESSION['message']?></span></div>
                         
                     

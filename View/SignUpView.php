@@ -34,42 +34,39 @@ $email = $_POST ['Email'];
                             $existingUser = $controller->GetUser($email);
                             if ($existingUser->getEmail()!=$email)
                             {
-                                $token=generateToken();
-                                $user=new User($firstName,$lastName,$email,$password,$token);
+                                
+                                $user=new User($firstName,$lastName,$email,$password);
                                 $controller->AddUser($user);
                                 $_SESSION['user']= serialize($user);
                                 $_SESSION['message']=('Welcome you created an account and loged in');
-                                header('location: ../Home.php');
+                                header('location: ../assets/Home.php');
 
                             }
                             else{$_SESSION['message']='Email already exist in the DataBase';
-                                header('location: ../SignUp.php');}
+                                header('location: ../assets/SignUp.php');}
                         }
                         else
                         {$_SESSION['message']='Passwords does not match.';
-                        header('location: ../SignUp.php');
+                        header('location: ../assets/SignUp.php');
                         }
                     }
                     else {
                         $_SESSION['message']= "Make sure to use valid email";
-                        header('location: ../SignUp.php');
+                        header('location: ../assets/SignUp.php');
                     }
                 }
                 else{$_SESSION['message']= "First name or Last name is wrong <br> Please make sure to use only letters";
-                header('location: ../SignUp.php');}
+                header('location: ../assets/SignUp.php');}
             }
             else {$_SESSION['message']= "Please fill in all the data";
-            header('location: ../SignUp.php');}
+            header('location: ../assets/SignUp.php');}
         }
         else {
             $_SESSION['message']= "Error submiting the data!";
-            header('location: ../SignUp.php');
+            header('location: ../assets/SignUp.php');
         }
 
-    function generateToken($length = 20)
-    {
-    return bin2hex(random_bytes($length));
-    }
+        
 
 
 ?>

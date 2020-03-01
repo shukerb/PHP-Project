@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION['message'])) {
+    $_SESSION['message']=' ';
+}
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +18,15 @@
         
         <div class="row" >
             <h3>Forget my password</h3>
-            <form action="View/passwordRequestView.php" method="GET" class="col " id="signInForm" >
+            <form action="../View/PasswordRequestView.php" method="POST" class="col " id="signInForm" >
                 <div class="input-field col ">
                 
                     <div class="row">
                         <label for="email">Email</label>
                         <input type="email"  name="Email" id="email" >
                     </div>
-                    <div class="row"><button class="btn waves-effect waves-light" type = "submit"> Recover Password </button></div>
+                    <div class="row"><button class="btn waves-effect waves-light" type = "submit"> Reset Password </button></div>
+                    <div class="row"><span calss="helper-text" style= "color:red;"><?= $_SESSION['message']?></span></div>
                         
                 </div>
             </form>

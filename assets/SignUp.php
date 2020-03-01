@@ -15,7 +15,7 @@ session_start();
         
         <div class="row">
         <h3>Sign Up</h3>
-            <form action="View/SignInView.php" method="POST" class="col" id="signInForm" novalidate >
+            <form action="../View/SignUpView.php" method="POST" class="col" id="signInForm" novalidate >
                 <div class="input-field col">
                 
                     <div class="row">
@@ -53,7 +53,7 @@ session_start();
                     </div>
                     <div class="row">Already have an account?</div>
                     <div class="row">
-                        <a href="Index.php" class="btn waves-effect waves-light">LogIn</a>
+                        <a href="..//index.php" class="btn waves-effect waves-light">LogIn</a>
                     </div>
                     <div class="row">
                     <span calss="helper-text" style= "color:red;"> <?= $_SESSION['message']?> </span>
