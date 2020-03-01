@@ -11,7 +11,7 @@ $confirm_password = $_POST['Confirm-Password'];
 $email = $_POST ['Email'];
 
 
-        /*--------------------FORM VALIDATION------------------*/
+    /*--------------------FORM VALIDATION------------------*/
         //make sure that the form is submited //$_SERVER['REQUEST_METHOD']=='POST'
         if ($_SERVER['REQUEST_METHOD']=='POST')
         {
@@ -34,11 +34,12 @@ $email = $_POST ['Email'];
                             $existingUser = $controller->GetUser($email);
                             if ($existingUser->getEmail()!=$email)
                             {
-                                $user=new User($firstName,$lastName,$email,$password);
+                                $token=generateToken();
+                                $user=new User($firstName,$lastName,$email,$password,$token);
                                 $controller->AddUser($user);
                                 $_SESSION['user']= $user;
                                 $_SESSION['message']=('Welcome you created an account and loged in');
-                                header('location: ../Page1.php');
+                                header('location: ../Home.php');
 
                             }
                             else{$_SESSION['message']='Email already exist in the DataBase';
@@ -64,4 +65,11 @@ $email = $_POST ['Email'];
             $_SESSION['message']= "Error submiting the data!";
             header('location: ../SignUp.php');
         }
+
+    function generateToken($length = 20)
+    {
+    return bin2hex(random_bytes($length));
+    }
+
+
 ?>

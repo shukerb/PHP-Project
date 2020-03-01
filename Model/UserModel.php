@@ -5,12 +5,14 @@ class User{
     private $lastName;
     private $email;
     private $password;
+    private $token;
 
-    function __construct($firstname,$lastname,$email,$password){
+    function __construct($firstname,$lastname,$email,$password,$token){
         $this->firstName=$firstname;
         $this->lastName=$lastname;
         $this->email=$email;
         $this->password=$password;
+        $this->token=$token;
     }
 
     //a getter for each element.
@@ -29,6 +31,9 @@ class User{
     
     public function getPassword(){
         return $this->password;
+    }
+    public function getToken(){
+        return $this->token;
     }
 }
 

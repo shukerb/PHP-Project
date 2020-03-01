@@ -18,7 +18,7 @@ if (empty($_SESSION['message'])) {
         
         <div class="row" >
         <h3>Login In</h3>
-            <form action="#" method="POST" class="col " id="signInForm" >
+            <form action="View/LogInView.php" method="POST" class="col " id="signInForm" >
                 <div class="input-field col ">
                 
                     <div class="row">
@@ -32,12 +32,13 @@ if (empty($_SESSION['message'])) {
                     <div class="switch row">
                         <label>
                         Remmember me
-                        <input type="checkbox">
+                        <input type="checkbox" name="Remember">
                         <span class="lever"></span>
                         </label>
                     </div>
                     
                     <div class="row"><button class="btn waves-effect waves-light" type = "submit"> Login</button></div>
+                    <div class="row"><a href="passwordRequest.php">Forgot my password</a></div>
                     <div class="row">Don't have an account?</div>
                     <div class="row"><a href="SignUp.php" class="btn waves-effect waves-light">Signup</a></div>
                     <div class="row"><span calss="helper-text" style= "color:red;"><?= $_SESSION['message']?></span></div>
