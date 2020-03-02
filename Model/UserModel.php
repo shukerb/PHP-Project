@@ -24,6 +24,11 @@ class User{
         $this->email=$email;
         $this->password=$password;
     }
+
+    //set user password
+    public function editPassword($password){
+        $this->password=$password;
+    }
     //a getter for each element.
     
     public function getFirstName(){

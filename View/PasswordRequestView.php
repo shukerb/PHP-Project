@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		{
             $selector=bin2hex(random_bytes(8));
             $token = random_bytes(16);
-            $url = "www.628584.000webhostapp.com/assets/creatNewpassword.php?selector=".$selector."&validator=".bin2hex($token);
+            $url = "www.628584.000webhostapp.com/assets/newPwdView.php?selector=".$selector."&validator=".bin2hex($token);
             //expierd time of the token will be after an hour 
             $exTime= date("U")+1800;
             //check if the user have any token in the db and delete it 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             $subject = "Reset Your Password";
             $message = '<p> We recived a password reset request, the link is to reset your password.
             If you did not make this request, you can ignore this email. <br> Hereis your password recover link:<br> 
-            <a href="'.$link.'">'. $link .'</a></p>';
+            <a href="'.$url.'">'. $url .'</a></p>';
             $header = "From: 628584@student.inholland.nl\r\n";
             $header .= "Content-type: text/html\r\n";
 

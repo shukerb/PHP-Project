@@ -16,6 +16,15 @@ class TokenController{
         run_mysql_query($query);
     }
 
+    function GetToken($selector)
+    {
+        $currentDate=date("U");
+        $query = "SELECT `email`, `selector`, `token`, `expiredTime` FROM `pwdreset` WHERE `selector`='$selector' AND `expiredTime`>= '$currentDate'";
+        $result = fetch_record($query);
+        $token = new TokenModel($result['email'],$result['selector'],$result['token'],$result['expiredTime']);
+ 	    return $token;
+    }
+
 
 
     function DeleteToken($email){

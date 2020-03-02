@@ -1,7 +1,13 @@
 <?php
 session_start();
+$email='';
+$password='';
 if (empty($_SESSION['message'])) {
     $_SESSION['message']=' ';
+}
+if (isset($_COOKIE["Email"])&&isset($_COOKIE["Password"])) {
+    $email=unserialize($_COOKIE["Email"]);
+    $password=unserialize($_COOKIE["Password"]);
 }
 ?>
 <html lang="en">
@@ -23,11 +29,11 @@ if (empty($_SESSION['message'])) {
                 
                     <div class="row">
                         <label for="email">Email</label>
-                        <input type="email"  name="Email" id="email" >
+                        <input type="email"  name="Email" id="email" value="<?= $email?>">
                     </div>
                     <div class="row">
                             <label for="password">Password</label>
-                            <input type="password"  name="Password" id="password">
+                            <input type="password"  name="Password" id="password"value="<?= $password?>">
                     </div>
                     <div class="switch row">
                         <label>

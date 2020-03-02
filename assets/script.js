@@ -163,7 +163,7 @@ function DeleteConfermation(){
     var deleteAccount= window.confirm("Are you sure you want to delete your account?");
 
     if (deleteAccount==true) {
-        location.href = "View/DeleteAccountView.php";
+        location.href = "../View/DeleteAccountView.php";
         alert("Your account has been deleted")
     }
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('Model/UserModel.php');
+require_once('../Model/UserModel.php');
 //check if the user is set 
 if (!isset($_SESSION['user'])) {
     header('location: ..//Index.php');
@@ -27,7 +27,7 @@ if (!isset($_SESSION['user'])) {
         <div class="row" >
         <h3><?= $_SESSION['message']?></h3>
         
-        <div class="row"><a href="#" class="btn waves-effect waves-light">Edite your Information</a></div>
+        <div class="row"><a href="EditInfo.php" class="btn waves-effect waves-light">Edite your Information</a></div>
         <div class="row"><button class="btn waves-effect waves-light" onclick="DeleteConfermation()"> Delete your account</button></div>
         <div class="row"><a href="..//View/LogOutView.php" class="btn waves-effect waves-light">Logout</a></div>
         

@@ -23,8 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			{
                 //check if remember me box is active and set a cookie 
                 if (!empty($_POST['Remember'])) {
-                    //$token= $user->getToken();
-                    //setcookie("loginToken", $token, time() + (86400 * 30), "/");
+					setcookie("Email", serialize($email), time() + (86400 * 30), "/");
+					setcookie("password", serialize($password), time() + (86400 * 30), "/");
+					
                 }
 				$_SESSION['user']= serialize($user);
                 $_SESSION['message']=('Welcome you are loged in');

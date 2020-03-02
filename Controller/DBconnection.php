@@ -17,6 +17,7 @@ if ($connection->connect_errno)
 /*----------------------DATABASE QUERYING FUNCTIONS-----------------------*/
 //SELECT - used when expecting single OR multiple results
 //returns an array that contains one or more associative arrays
+//phpprojectpassword
 function fetch_all($query)
 {
   $data = array();
