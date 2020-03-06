@@ -28,24 +28,29 @@ $_SESSION['message']= '';
                         //unserialize the user object
                         $user = unserialize($_SESSION['user']);
                         $userID=$user->getID();
+                        
                         $passwordCheck= password_verify($password, $user->getPassword());
-                        if ($passwordCheck=true) {
+                        var_dump($user);
+                        var_dump($user->getPassword()) ;
+                        var_dump(password_hash($password, PASSWORD_DEFAULT)) ;
+                        if ($passwordCheck) {
                             //edite existing user 
                             //$editedUser=$user->editUser($firstName,$lastName,$email,$password);
                             
                             $newUser=new User($firstName,$lastName,$email,$password);
                             $newUser -> setID($userID);
                             //submit the changes to the db
+                            var_dump($newUser) ;
                             $userController=new UserController();
                             $userController->EditUser($newUser);
                             //send feedback and redirect
                             $_SESSION['message']= "Your data has been changed.";
                             
-                            header('location: ../assets/Home.php');
+                            //header('location: ../assets/Home.php');
                         }
                         else {
                             $_SESSION['message']= "Wrong password";
-                        header('location: ../assets/EditInfo.php');
+                       // header('location: ../assets/EditInfo.php');
                         }
                        
 
