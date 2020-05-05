@@ -17,17 +17,23 @@ if (!isset($_SESSION['user'])) {
 </head>
 <body>
     
-
-    <div class="container">
-        <h1>welcome</h1>
-        
-    </div>
     <div class="container z-depth-5 valign-wrapper ">
         
         <div class="row" >
         <h3><?= $_SESSION['message']?></h3>
+        <h5> upload a photo to run it through an AI application</h5>
+        <div class="row">
+            <form action="../View/uploadPic.php" method="POST" enctype= "multipart/form-data" class = "col" >
+            <div class="row"><input type = "file" name ="photo" ></div>
+            <div class="row"><button class="btn waves-effect waves-light " type = "submit" name = "submit "> Upload your Photo</button></div>
+            </form>
+        </div>
+        <div class="row"><a href="EditInfo.php" class="btn waves-effect waves-light">Edite yo
+
+    <div class="container">
+        <h1>welcome</h1>
         
-        <div class="row"><a href="EditInfo.php" class="btn waves-effect waves-light">Edite your Information</a></div>
+    </div>ur Information</a></div>
         <div class="row"><button class="btn waves-effect waves-light" onclick="DeleteConfermation()"> Delete your account</button></div>
         <div class="row"><a href="..//View/LogOutView.php" class="btn waves-effect waves-light">Logout</a></div>
         
