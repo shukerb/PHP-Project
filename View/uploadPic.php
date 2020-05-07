@@ -25,10 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')  {
                 move_uploaded_file($photoTempName,$photoDestination);
                 header('location: ../assets/home.php?uploadIsSuccessful');
 
-
-
-
-
             } else {
                 $_SESSION['message']='your photo is too big, please try something else';
                 header('location: ../assets/home.php');

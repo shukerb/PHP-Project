@@ -28,12 +28,7 @@ if (!isset($_SESSION['user'])) {
             <div class="row"><button class="btn waves-effect waves-light " type = "submit" name = "submit "> Upload your Photo</button></div>
             </form>
         </div>
-        <div class="row"><a href="EditInfo.php" class="btn waves-effect waves-light">Edite yo
-
-    <div class="container">
-        <h1>welcome</h1>
-        
-    </div>ur Information</a></div>
+        <div class="row"><a href="EditInfo.php" class="btn waves-effect waves-light">Edite your Information</a></div>
         <div class="row"><button class="btn waves-effect waves-light" onclick="DeleteConfermation()"> Delete your account</button></div>
         <div class="row"><a href="..//View/LogOutView.php" class="btn waves-effect waves-light">Logout</a></div>
         
