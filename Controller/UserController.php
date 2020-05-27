@@ -9,9 +9,10 @@ class UserController{
         $lastName= escape_this_string($user->getLastName());
         $password=password_hash($user->getPassword(), PASSWORD_DEFAULT);
         $email=escape_this_string($user->getEmail());
+        $time= date("Y-m-d");
         
         
-        $query ="INSERT INTO `user`(`firstName`, `lastName`, `email`, `password`) VALUES ('$firstName','$lastName','$email','$password')";
+        $query ="INSERT INTO `user`(`firstName`, `lastName`, `email`, `password`,`createdTime`) VALUES ('$firstName','$lastName','$email','$password','$time')";
         run_mysql_query($query);
     }
 

@@ -1,17 +1,21 @@
 <?php
-include("vendor/autoload.php");
+session_start();    
+include("../vendor/autoload.php");
 $mollie = new \Mollie\Api\MollieApiClient();
-$mollie->setApiKey("Add api key here");
+$mollie->setApiKey("test_8nr7Jtgqm5AwtFNmeydKEPKxeKmqkc");
 
 $payment = $mollie->payments->create([
     "amount" => [
         "currency" => "EUR",
         "value" => "10.00"
     ],
-    "description" => "My first API payment",
-    "redirectUrl" => "https://www.youtube.com/watch?v=Uqp0b2soCUU&t=368s",
-    "webhookUrl"  => "https://www.youtube.com/watch?v=Uqp0b2soCUU&t=368s",
+    "description" => "10.00 Euros payment",
+    "redirectUrl" => "https://628584.000webhostapp.com/assets/Home.php",
 ]);
-print $payment->id;
+$id =$payment->id;
+$_SESSION['LastPayment']= $id;
 header("Location: " . $payment->getCheckoutUrl(), true, 303);
+
+
+    
 ?>

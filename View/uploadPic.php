@@ -19,23 +19,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')  {
     if (in_array($photoExt, $allowedExt)) {
         if ($photoError===0 ) {
             if ($photoSize < 500000) {
+                
                 $photoNewName = uniqid('',true)."."."$photoExt";
 
                 $photoDestination = '../Uploads/'.$photoNewName;
                 move_uploaded_file($photoTempName,$photoDestination);
-                header('location: ../assets/home.php?uploadIsSuccessful');
+         
+    
+                // Load image file  
+                $image = imagecreatefrompng($photoDestination);   
+                
+                // Use imagerotate() function to rotate the image 
+                $img = imagerotate($photoDestination, 180, 0); 
+                
+                // Output image in the browser  
+                header("Content-type: image/png");   
+                
+
+                
+               // header('location: ../assets/Home.php?uploadIsSuccessful');
 
             } else {
                 $_SESSION['message']='your photo is too big, please try something else';
-                header('location: ../assets/home.php');
+                header('location: ../assets/Home.php');
             }
         } else {
             $_SESSION['message']='there was an error uploading your file!';
-            header('location: ../assets/home.php');
+            header('location: ../assets/Home.php');
         }
     } else {
         $_SESSION['message']='you can not upload this photo type!';
-        header('location: ../assets/home.php');
+        header('location: ../assets/Home.php');
     }
 
 }

@@ -3,7 +3,13 @@ body{
 }
 .container{
     background-color: #fafafa;
+    
 }
+.photo-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+  }
 .row{
     text-align:center;
 }
